@@ -1,0 +1,6 @@
+{
+  "name": "DANIEL — The Things People Feel",
+  "description": "A psychological guide to human behavior, emotional patterns, and relationship dynamics by Daniel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

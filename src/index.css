@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --color-gold-300: #eed6aa;
+  --color-gold-400: #dfc18b;
+  --color-gold-500: #c9a76d;
+  --color-gold-600: #af8951;
+  --color-warm-black: #0c0b0e;
+  --color-warm-dark: #141217;
+  --color-warm-panel: #1b1920;
+  --color-parchment-bg: #ece5d8;
+  --color-parchment-card: #f9f6ef;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0c0b0e;
+  color: #e5e1da;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-display {
+  font-family: 'Cinzel', serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom subtle luxury glows and textures */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f7e8cf 0%, #c9a76d 60%, #9e7a45 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 25px -5px rgba(201, 167, 109, 0.15);
+}
+
+/* Smooth book 3D perspective shadow */
+.book-shadow {
+  filter: drop-shadow(-15px 25px 30px rgba(0, 0, 0, 0.7)) drop-shadow(0 5px 15px rgba(201, 167, 109, 0.08));
+}
+
