@@ -18,13 +18,20 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { FinalCtaSection } from './components/FinalCtaSection';
 import { Footer } from './components/Footer';
 import { SampleReaderModal } from './components/SampleReaderModal';
-import { CheckoutModal } from './components/CheckoutModal';
-import { BookOpen, ArrowRight, Sparkles } from 'lucide-react';
+import { BookOpen, ArrowRight, Download } from 'lucide-react';
 
 export default function App() {
-  const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [readerOpen, setReaderOpen] = useState(false);
   const [showStickyBar, setShowStickyBar] = useState(false);
+
+  const handleDownloadBook = () => {
+    const link = document.createElement('a');
+    link.href = '/Daniel_The_Things_People_Feel_But_Never_Say_MAXIMUM_PREMIUM(5).pdf';
+    link.download = 'Daniel_The_Things_People_Feel_But_Never_Say_MAXIMUM_PREMIUM(5).pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +46,7 @@ export default function App() {
     <div className="min-h-screen bg-[#0c0b0e] text-[#e5e1da] font-sans selection:bg-[#dfc18b] selection:text-[#121014] relative">
       {/* Top Navigation */}
       <Navbar
-        onOpenCheckout={() => setCheckoutOpen(true)}
+        onOpenCheckout={handleDownloadBook}
         onOpenPreview={() => setReaderOpen(true)}
       />
 
@@ -47,7 +54,7 @@ export default function App() {
       <main>
         {/* Hero Section */}
         <HeroSection
-          onOpenCheckout={() => setCheckoutOpen(true)}
+          onOpenCheckout={handleDownloadBook}
           onOpenPreview={() => setReaderOpen(true)}
         />
 
@@ -61,7 +68,7 @@ export default function App() {
 
         {/* Inside The Book (Dark Obsidian & Golden Accents) */}
         <InsideBookSection
-          onOpenCheckout={() => setCheckoutOpen(true)}
+          onOpenCheckout={handleDownloadBook}
           onOpenPreview={() => setReaderOpen(true)}
         />
 
@@ -70,14 +77,14 @@ export default function App() {
 
         {/* Final CTA Offer Section (Atmospheric Dark Gold & Stacked Volumes) */}
         <FinalCtaSection
-          onOpenCheckout={() => setCheckoutOpen(true)}
+          onOpenCheckout={handleDownloadBook}
           onOpenPreview={() => setReaderOpen(true)}
         />
       </main>
 
       {/* Footer */}
       <Footer
-        onOpenCheckout={() => setCheckoutOpen(true)}
+        onOpenCheckout={handleDownloadBook}
         onOpenPreview={() => setReaderOpen(true)}
       />
 
@@ -99,12 +106,11 @@ export default function App() {
 
           <button
             id="floating-get-book-btn"
-            onClick={() => setCheckoutOpen(true)}
+            onClick={handleDownloadBook}
             className="flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-[#dfc18b] hover:bg-[#ebd4aa] text-[#141217] font-semibold text-xs tracking-wider uppercase rounded-full shadow-lg hover:shadow-[#dfc18b]/30 transition-all cursor-pointer"
           >
+            <Download className="w-3.5 h-3.5" />
             <span>Get The Book</span>
-            <span className="font-serif text-sm font-bold border-l border-[#141217]/30 pl-1.5">$19</span>
-            <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
       </aside>
@@ -115,17 +121,7 @@ export default function App() {
         onClose={() => setReaderOpen(false)}
         onOpenCheckout={() => {
           setReaderOpen(false);
-          setCheckoutOpen(true);
-        }}
-      />
-
-      {/* Instant Checkout Modal */}
-      <CheckoutModal
-        isOpen={checkoutOpen}
-        onClose={() => setCheckoutOpen(false)}
-        onOpenReader={() => {
-          setCheckoutOpen(false);
-          setReaderOpen(true);
+          handleDownloadBook();
         }}
       />
     </div>
