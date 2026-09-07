@@ -100,8 +100,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCheckout, onOpenPreview })
             </ul>
           </div>
 
-          {/* Guarantee & Editions */}
-          <div className="md:col-span-4 space-y-3 text-left">
+          {/* Guarantee, Formats & Contact */}
+          <div className="md:col-span-4 space-y-3.5 text-left">
             <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-[#dfc18b]">
               Formats Included
             </h4>
@@ -109,7 +109,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCheckout, onOpenPreview })
               Every copy includes DRM-free files optimized for Kindle, Apple Books, Kobo, Android, and printable PDF.
             </p>
 
-            <div className="pt-1 flex flex-wrap gap-1.5">
+            <div className="pt-0.5 flex flex-wrap gap-1.5">
               <span className="px-2.5 py-1 rounded bg-[#17151e] border border-[#2c2636] text-[10px] font-mono text-[#c5bdaf]">
                 .EPUB
               </span>
@@ -124,10 +124,25 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCheckout, onOpenPreview })
               </span>
             </div>
 
+            {/* Contact Box: Talk to Us */}
             <div className="pt-2">
-              <span className="text-[11px] text-[#786e60] block">
-                Direct inquiries or media questions: <a href="mailto:ec1665851@gmail.com" className="text-[#a49887] hover:underline">ec1665851@gmail.com</a>
-              </span>
+              <div className="p-3 rounded-lg bg-[#141219] border border-[#2d2737] space-y-1.5">
+                <div className="flex items-center gap-2 text-[#dfc18b]">
+                  <Mail className="w-3.5 h-3.5" />
+                  <span className="text-xs uppercase tracking-widest font-semibold font-sans">
+                    Talk to Us
+                  </span>
+                </div>
+                <p className="text-xs text-[#a09483]">
+                  Have questions or feedback? Reach out directly:
+                </p>
+                <a 
+                  href="mailto:ec1665851@gmail.com" 
+                  className="inline-flex items-center gap-1.5 text-xs text-[#f4efe6] hover:text-[#dfc18b] font-mono font-medium transition-colors hover:underline"
+                >
+                  ec1665851@gmail.com
+                </a>
+              </div>
             </div>
           </div>
 
